@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cyber-red: #ff0033;
+  --cyber-red-dark: #cc0029;
+  --cyber-red-glow: rgba(255, 0, 51, 0.5);
+  --cyber-black: #0a0a0a;
+  --cyber-dark: #111111;
+  --cyber-gray: #1a1a1a;
+  --cyber-light: #2a2a2a;
+  --cyber-text: #e0e0e0;
+  --cyber-text-dim: #888888;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--cyber-black);
+  color: var(--cyber-text);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fredoka', sans-serif;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cyber-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cyber-red);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyber-red-dark);
+}
+
+/* Glow effects */
+.glow-red {
+  box-shadow: 0 0 20px var(--cyber-red-glow), 0 0 40px rgba(255, 0, 51, 0.3);
+}
+
+.glow-text {
+  text-shadow: 0 0 10px var(--cyber-red-glow), 0 0 20px rgba(255, 0, 51, 0.3);
+}
+
+.glow-border {
+  border: 1px solid var(--cyber-red);
+  box-shadow: 0 0 10px var(--cyber-red-glow), inset 0 0 10px rgba(255, 0, 51, 0.1);
+}
+
+/* Card styling */
+.cyber-card {
+  background: linear-gradient(145deg, var(--cyber-gray), var(--cyber-dark));
+  border-radius: 16px;
+  border: 1px solid rgba(255, 0, 51, 0.2);
+  transition: all 0.3s ease;
+}
+
+.cyber-card:hover {
+  border-color: var(--cyber-red);
+  box-shadow: 0 0 30px rgba(255, 0, 51, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Button styling */
+.cyber-btn {
+  background: linear-gradient(135deg, var(--cyber-red), var(--cyber-red-dark));
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.cyber-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px var(--cyber-red-glow);
+}
+
+.cyber-btn-outline {
+  background: transparent;
+  border: 2px solid var(--cyber-red);
+  color: var(--cyber-red);
+  padding: 10px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cyber-btn-outline:hover {
+  background: var(--cyber-red);
+  color: white;
+  box-shadow: 0 0 25px var(--cyber-red-glow);
+}
+
+/* Input styling */
+.cyber-input {
+  background: var(--cyber-dark);
+  border: 1px solid var(--cyber-light);
+  border-radius: 8px;
+  padding: 14px 18px;
+  color: var(--cyber-text);
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.cyber-input:focus {
+  outline: none;
+  border-color: var(--cyber-red);
+  box-shadow: 0 0 10px rgba(255, 0, 51, 0.3);
+}
+
+.cyber-input::placeholder {
+  color: var(--cyber-text-dim);
+}
+
+/* Section styling */
+section {
+  padding: 100px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--cyber-red);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--cyber-red), transparent);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
